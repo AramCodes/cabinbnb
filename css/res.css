@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.reservations-section {
+    background-image: url(../images/forest-bg-2.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', serif;
+}
+
+.reservation-info {
+    margin: 0 auto;
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    min-width: 250px;  
+}
+
+.descriptions {
+    display: none;
+}
+
+.select-box {
+    padding: 1em 1.5em;
+    font-size: 1.2rem;
+    text-align: center;
+    
+    cursor: pointer;
+    max-width: 305px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+#reservationImage {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+    height: 350px;
+    border: 3px solid #72A84A;   
+}
+
+.days {
+    margin-top: 1.5em;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+}
+
+#days {
+    font-size: 1.2rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.5em;
+    height: 50px;
+    width: 50px;
+}
+
+#info {
+    /*display: none;*/
+    margin-bottom: 2em;
+}
+
+#total {
+    text-align: center;
+}
+
+#dynamic {
+    color: #72A84A;
+}
+
+.submit-btn {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    background-color: #72A84A;
+    border: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    padding: 1em 1.75em;
+    cursor: pointer;
+}
+
+@media (min-width: 810px) {
+
+    .reservation-info {
+        display:flex;
+        justify-content: space-around;
+        align-items: center; 
+    }
+
+    .select-container { 
+        flex-direction: column;
+    }
+
+    .select-box { 
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    #reservationImage {
+        display: block;
+        margin: 3em;
+        width: 600px;
+        height: 500px; 
+        order: -1;  
+    }
+
+    .stack {
+        margin-left: 3em;
+    }
+
+    .submit-btn {
+        margin-right: 1.5em;
+    }
+
+    .descriptions {
+        display: block;
+        margin-left: 2.5em;
+        max-width: 45ch;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+}
+
+@media (min-width: 950px) {
+
+    .reservation-info {
+        display:flex;
+        justify-content: space-around;
+    
+    }
+
+    .select-container { 
+        justify-content: start;
+    }
+
+    .select-box { 
+        max-width: 800px;
+        min-width: 600px;
+        margin: 0 auto;
+        order: -2;
+    }
+
+    #reservationImage {
+        display: block;
+        margin: 3em;
+        width: 700px;
+        height: 700px;   
+    }
+
+    .stack {
+        margin-left: 2em;
+    }
+
+
+    .days {
+        font-size: 1.5rem;
+    }
+
+    #days {
+        width: 75px;
+        height: 75px;
+    }
+
+    #total {
+        font-size: 1.5rem;
+    }
+
+    .submit-btn {
+        margin-left: 1.5em;
+    }
+}
+
+@media (min-width: 1300px) {
+    .reservation-info {
+        flex-direction: column;
+    }
+
+    .select-container {
+        display: flex;
+    }
+
+    .submit-btn {
+        margin-bottom: 1.5em;
+    }
+
+    #reservationImage {
+        display: inline;
+        margin: 0 auto;
+        margin-top: 1.5em;
+        width: 800px;
+        height: 800px; 
+        float: left; 
+        margin-bottom: 2em; 
+    }
+
+    .descriptions {
+        align-self: baseline;
+        display: inline;
+        min-width: 0;
+        max-width: 55ch;
+        margin-left: 4rem;
+        font-size: 1.3rem;
+    }
+
+    .flex-box {
+        display: flex;
+        align-items: center;
+    }
+
+    .stack {
+        margin: 5em;
+        position: absolute;
+        top: 25%;
+        right: 23%;
+    }
+}

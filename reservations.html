@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <!--Css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/res.css">
+    
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="forest-hero">
+        <div class="wrapper no-padding">
+            <header>
+                <a href="index.html" class="logo">Cabin.BnB</a>
+                
+                <nav>
+                    <img src="images/menu.svg" class="menu" id="menu-btn" alt="open menu">
+                    
+                    <ul class="nav" id="nav">
+                        <li class="exit" id="exit-btn">
+                            <a href="#"><img src="images/exit.svg"></a>
+                        </li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cabins.html">Cabins</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li class="active"><a href="reservations.html">Reservations</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <main class="reservations-section">
+
+        <h1>Reserve Now</h1>
+
+        <div class="reservation-info">
+
+            <!--Select Menu-->
+            <form class="select-container">
+                <select class="select-box" id="propertySelect" required>
+                    <option disabled hidden selected>Select A Rental</option>
+                    <option value="Whispering Willows">Whispering Willows</option>
+                    <option value="Slumbering Willows">Slumbering Willows</option>
+                    <option value="Whispering Meadows">Whispering Meadows</option>
+                    <option value="Slumbering Hollows">Slumbering Hollows</option>
+                    <option value="Dancing Meadows">Dancing Meadows</option>
+                    <option value="Sleeping Tranquility">Sleeping Tranquility</option>
+                    <option value="Wintering Willows">Wintering Willows</option>
+                    <option value="Slumbering Lakes">Slumbering Lakes</option>
+                    <option value="Winter's Landing">Winter's Landing</option>
+                    <option value="Independence Rest Lakes">Independence Rest Lakes</option>
+                    <option value="The Bourbon Hut">The Bourbon Hut</option>
+                    <option value="Royal Magic Cottage">Royal Magic Cottage</option>
+                </select>
+
+                <!--Reservation Image-->
+                <div class="flex-box">
+                    <img id="reservationImage" src="images/question.jpg"/>
+                    <p class="descriptions">Lorem ipsum dolor sit amet consectetur adipisicing 
+                    elit. Numquam neque quod ea corporis tempora fugiat odio nihil quam fugit 
+                    unde alias, quo molestiae autem accusantium! Enim ea itaque inventore 
+                    repellendus suscipit, culpa mollitia facere modi, omnis hic accusantium 
+                    aut corrupti.</p>
+                </div>
+            
+            </form>
+            
+            
+
+            <!--Days-->
+            <div class="stack">
+                <label for="days" class="days">Days</label>
+                <input type="number" id="days" min="1" max="30" placeholder="1-30" required> 
+            
+            
+            
+            <!--Info-->
+                <div id="info">
+                    <h4 id="total">Price per day: $ <span id="dynamic"></span></h4>
+                </div>                    
+            
+            <!--Submit Btn-->
+                <button class="submit-btn" id="submitBtn">Book Now</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>Copyright &copy; 2023; Made by <span class="designer">AramCodes</p>
+    </div>
+
+    
+    <!--JavaScript-->
+    <script src="js/nav.js"></script>
+    <script src="js/res.js"></script>
+</body>        

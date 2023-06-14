@@ -1,0 +1,27 @@
+1. add faq page * done
+2. add a footer * done
+3. add a reservations page
+4. switch text to make seem real especially testimonials. * done
+
+* figure out why hamburger isn't working on faq and reservation * done
+
+
+
+Whispering Willows
+Slumbering Willows
+Whispering Meadows
+Slumbering Hollows
+Dancing Meadows
+Sleeping Tranquility
+Wintering Willows
+Slumbering Lakes
+Winter's Landing
+Independence Rest Lakes
+The Bourbon Hut
+Royal Magic Cottage
+
+selection changes picture and price
+days change price
+* add discount for more days
+ 
+#info display to block when # is more than 0

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-image: url(../images/forest-bg-2.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 75%;
+    margin: auto;
+}
+
+.wrapper > p, 
+.wrapper > h1 {
+    font-family: 'Roboto', sans-serif;
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+.wrapper > h1 {
+    margin-bottom: 1em;
+    letter-spacing: 1px;
+}
+
+.accordion {
+    font-weight: bold;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 2em 2.5em;
+    border: 0;
+    outline: 0;
+    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+
+.accordion i {
+    font-size: 1.6rem;
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.faq.active, .accordion:hover {
+    background-color: #72A84A;
+}
+
+.panel {
+    display: none;
+    padding: 0 2rem 2.5rem 2rem;
+    background-color: white;
+    overflow: hidden;
+    background-color: #EEEEEE;
+    transition: 0.5s ease-in-out;
+}
+
+.panel p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.faq {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /*margin: 10px 0:*/
+}
+
+.faq.active {
+    border: none;
+}
+
+.faq.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.fa-chevron-down {
+    transition: transform .3s ease-in-out;
+}
