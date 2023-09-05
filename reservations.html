@@ -10,7 +10,12 @@
     
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
 </head>
 <body>
     <div class="forest-hero">
@@ -35,63 +40,82 @@
         </div>
     </div>
 
+
+    <h1>Reserve Now</h1>
     <main class="reservations-section">
 
-        <h1>Reserve Now</h1>
 
-        <div class="reservation-info">
-
-            <!--Select Menu-->
-            <form class="select-container">
-                <select class="select-box" id="propertySelect" required>
-                    <option disabled hidden selected>Select A Rental</option>
-                    <option value="Whispering Willows">Whispering Willows</option>
-                    <option value="Slumbering Willows">Slumbering Willows</option>
-                    <option value="Whispering Meadows">Whispering Meadows</option>
-                    <option value="Slumbering Hollows">Slumbering Hollows</option>
-                    <option value="Dancing Meadows">Dancing Meadows</option>
-                    <option value="Sleeping Tranquility">Sleeping Tranquility</option>
-                    <option value="Wintering Willows">Wintering Willows</option>
-                    <option value="Slumbering Lakes">Slumbering Lakes</option>
-                    <option value="Winter's Landing">Winter's Landing</option>
-                    <option value="Independence Rest Lakes">Independence Rest Lakes</option>
-                    <option value="The Bourbon Hut">The Bourbon Hut</option>
-                    <option value="Royal Magic Cottage">Royal Magic Cottage</option>
-                </select>
-
-                <!--Reservation Image-->
-                <div class="flex-box">
-                    <img id="reservationImage" src="images/question.jpg"/>
-                    <p class="descriptions">Lorem ipsum dolor sit amet consectetur adipisicing 
-                    elit. Numquam neque quod ea corporis tempora fugiat odio nihil quam fugit 
-                    unde alias, quo molestiae autem accusantium! Enim ea itaque inventore 
-                    repellendus suscipit, culpa mollitia facere modi, omnis hic accusantium 
-                    aut corrupti.</p>
-                </div>
-            
-            </form>
-            
-            
-
-            <!--Days-->
-            <div class="stack">
-                <label for="days" class="days">Days</label>
-                <input type="number" id="days" min="1" max="30" placeholder="1-30" required> 
-            
-            
-            
-            <!--Info-->
-                <div id="info">
-                    <h4 id="total">Price per day: $ <span id="dynamic"></span></h4>
-                </div>                    
-            
-            <!--Submit Btn-->
-                <button class="submit-btn" id="submitBtn">Book Now</button>
+        <div class="container">
+            <!-- Slider main container -->
+            <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="images/cabin1.jpg" alt="cabin1" data-id="0"> <button class="btn" id="addToCart" onclick="addProductToCart(0)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin2.jpg" alt="cabin2" data-id="1"> <button class="btn" id="addToCart" onclick="addProductToCart(1)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin3.jpg" alt="cabin3" data-id="2"> <button class="btn" id="addToCart" onclick="addProductToCart(2)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin4.avif" alt="cabin4" data-id="3"> <button class="btn" id="addToCart" onclick="addProductToCart(3)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin5.avif" alt="cabin5" data-id="4"> <button class="btn" id="addToCart" onclick="addProductToCart(4)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin6.avif" alt="cabin6" data-id="5"> <button class="btn" id="addToCart" onclick="addProductToCart(5)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin7.avif" alt="cabin7" data-id="6"> <button class="btn" id="addToCart" onclick="addProductToCart(6)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin8.avif" alt="cabin8" data-id="7"> <button class="btn" id="addToCart" onclick="addProductToCart(7)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin9.avif" alt="cabin9" data-id="8"> <button class="btn" id="addToCart" onclick="addProductToCart(8)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin10.avif" alt="cabin10" data-id="9"> <button class="btn" id="addToCart" onclick="addProductToCart(9)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin11.avif" alt="cabin11" data-id="10"> <button class="btn" id="addToCart" onclick="addProductToCart(10)">Add A Day</button></div>
+            <div class="swiper-slide"><img src="images/cabin12.avif" alt="cabin12" data-id="11"> <button class="btn" id="addToCart" onclick="addProductToCart(11)">Add A Day</button></div>
             </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+  
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+  
+            </div>
+            
+        </div>
 
+        <div class="info">
+            <p class="property-desc" id="description"></p>
+    
+            <p class="days" id="days"></p>
+    
+            <p id="cartTotal" class="cart-total"></p>
+
+            <button class="pay-btn" id="payBtn">Pay Now</button>
+        </div>
+
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+            </div>
+    
         </div>
 
     </main>
+
+
+
+        <!--Credit Card Modal-->
+    <div class="popup" id="popup">
+    <div class="close-btn" id="closeBtn">&times;</div>
+    <h3>Enter card details</h3>
+    
+    <p class="cart-total" id="cartTotal1">Customer's Total: $</p>
+    
+    <input type="text" placeholder="Enter the customer's name" id="name" required>
+    <input type="text" placeholder="Enter the customer's card number" min="15" max="16" id="cardNumber" required>
+    <input type="text" placeholder="Enter the customer's cvv" min="3" max="4" id="cvv" required>
+    <button type="submit" class="btn1" id="close">Pay</button>
+    </div>
+
+    <!--Overlay to darken background when modal pops up-->
+    <div id="overlay"></div>
+
+    
 
     <footer>
         <div class="social-icons">
@@ -113,7 +137,8 @@
         <p>Copyright &copy; 2023; Made by <span class="designer">AramCodes</p>
     </div>
 
-    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <!--JavaScript-->
     <script src="js/nav.js"></script>
     <script src="js/res.js"></script>

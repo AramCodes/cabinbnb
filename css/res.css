@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 .reservations-section {
@@ -11,6 +12,7 @@ body {
     background-size: cover;
     box-sizing: border-box;
     height: 100vh;
+    display: flex;
 }
 
 h1 {
@@ -18,217 +20,284 @@ h1 {
     font-family: 'Montserrat', serif;
 }
 
-.reservation-info {
-    margin: 0 auto;
-}
-
-.select-container {
+.container {
+    margin: 0 50px;
+    max-width: 700px;
+    height: 730px;
+    background: #222;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+}
+
+.swiper {
+    width: 80%;
+    height: fit-content;
+}
+
+.swiper-slide img {
+    height: 730px;
+    width: 100%;
+}  
+
+.swiper .swiper-pagination-bullet-active {
+    background: #72A84A;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+    color: #fff;
+}
+
+.swiper-slide {
+    position: absolute;
+}
+
+.btn {
     position: relative;
-    min-width: 250px;  
-}
-
-.descriptions {
-    display: none;
-}
-
-.select-box {
-    padding: 1em 1.5em;
-    font-size: 1.2rem;
-    text-align: center;
-    
+    bottom: 100px;
+    left: 225px;
+    background: #72A84A;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0;
+    padding: 8px 15px;
     cursor: pointer;
-    max-width: 305px;
-    margin: 0 auto;
-    margin-bottom: 2em;
 }
 
-#reservationImage {
-    display: block;
-    margin: 0 auto;
-    width: 350px;
-    height: 350px;
-    border: 3px solid #72A84A;   
+.property-desc {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 50px;
+    max-width: 60ch;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 50px;
 }
 
 .days {
-    margin-top: 1.5em;
-    display: block;
-    text-align: center;
-    font-weight: 700;
-}
-
-#days {
     font-size: 1.2rem;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    margin-top: 0.5em;
-    height: 50px;
-    width: 50px;
-}
-
-#info {
-    /*display: none;*/
-    margin-bottom: 2em;
-}
-
-#total {
-    text-align: center;
-}
-
-#dynamic {
-    color: #72A84A;
-}
-
-.submit-btn {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    background-color: #72A84A;
-    border: 0;
-    font-size: 1.1rem;
     font-weight: 700;
+    margin-left: 50px;
+}
+
+/* Pay Btn */
+.pay-btn {
+    margin: 100px 200px;
+    padding: 15px 25px;
+    border: 0;
+    background-color: #72A84A;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+/*Payment Modal*/
+.popup{
+    margin: 0 auto;
+    width: 400px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 6px;
+    text-align: center;
+    z-index: 10;
+    transform: translate(-50%,50%) scale(0);
+    transition: 200ms ease-in-out, top 0.4s;
+    position: absolute;
+    top: 0;
+    left: 15%;
+}
+
+.open-popup {
+    top: 10%;
+    transform: translate(-50%,50%) scale(1);
+}
+
+.popup h3{
+    margin: 25px auto 10px;
+    font-size: 1.75rem;
+    font-family: sans-serif;
+}
+
+.popup input {
+    border: 2px solid lightgray;
+    box-sizing: border-box;
+    margin: 10px auto;
+    width: 350px;
+    padding: 20px 30px;
+}
+.popup .cart-total {
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+.btn1{
+    background-color:#16DB99;
+    font-size:1.5rem;
+    font-weight: bold;
     color: white;
-    padding: 1em 1.75em;
+    border:none;
+    padding:15px 30px;
+    margin: 10px auto; 
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+/*to be actived when modal is open*/
+#overlay {
+    position: fixed;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transition: .2s ease-in-out;
+}
+
+#overlay.active{
+    pointer-events: none;
+    opacity: 1;
+}
+
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-@media (min-width: 810px) {
-
-    .reservation-info {
-        display:flex;
-        justify-content: space-around;
-        align-items: center; 
-    }
-
-    .select-container { 
-        flex-direction: column;
-    }
-
-    .select-box { 
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    #reservationImage {
-        display: block;
-        margin: 3em;
-        width: 600px;
-        height: 500px; 
-        order: -1;  
-    }
-
-    .stack {
-        margin-left: 3em;
-    }
-
-    .submit-btn {
-        margin-right: 1.5em;
-    }
-
-    .descriptions {
-        display: block;
-        margin-left: 2.5em;
-        max-width: 45ch;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
-
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px;
+    width: 550px;
+    height: 100px;
+    background-color: #d2f8d2;
+    color: #013220;
+    font-size: 1.75rem;
+    z-index: 3;
 }
 
-@media (min-width: 950px) {
+.sidebar {
+    min-width: 30%;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+}
 
-    .reservation-info {
-        display:flex;
-        justify-content: space-around;
-    
-    }
+.head {
+    background-color: #16DB99;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
 
-    .select-container { 
-        justify-content: start;
-    }
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+}
 
-    .select-box { 
-        max-width: 800px;
-        min-width: 600px;
-        margin: 0 auto;
-        order: -2;
-    }
+.product-title {
+    font-size: 12px;
+}
 
-    #reservationImage {
-        display: block;
-        margin: 3em;
-        width: 700px;
-        height: 700px;   
-    }
+.product-price {
+    font-size: 15px;
+}
 
-    .stack {
-        margin-left: 2em;
-    }
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.row-img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #72A84A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowimg {
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.fa-trash:hover {
+    cursor: pointer;
+    color: #72A84A;
+}
 
 
-    .days {
-        font-size: 1.5rem;
-    }
-
-    #days {
-        width: 75px;
-        height: 75px;
-    }
-
-    #total {
-        font-size: 1.5rem;
-    }
-
-    .submit-btn {
-        margin-left: 1.5em;
+@media (max-width: 2225px) {
+    .popup{
+        left: 20%;
     }
 }
 
-@media (min-width: 1300px) {
-    .reservation-info {
+@media (max-width: 1610px) {
+    .reservations-section {
         flex-direction: column;
     }
+}
 
-    .select-container {
-        display: flex;
+@media (max-width: 1250px) {
+    .popup{
+        left: 35%;
+    }
+}
+
+@media (max-width: 900px) {
+    .popup{
+        left: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .popup{
+        left: 50%;
     }
 
-    .submit-btn {
-        margin-bottom: 1.5em;
+    .btn {
+        left: 175px;
     }
 
-    #reservationImage {
-        display: inline;
-        margin: 0 auto;
-        margin-top: 1.5em;
-        width: 800px;
-        height: 800px; 
-        float: left; 
-        margin-bottom: 2em; 
-    }
-
-    .descriptions {
-        align-self: baseline;
-        display: inline;
-        min-width: 0;
-        max-width: 55ch;
-        margin-left: 4rem;
-        font-size: 1.3rem;
-    }
-
-    .flex-box {
-        display: flex;
-        align-items: center;
-    }
-
-    .stack {
-        margin: 5em;
-        position: absolute;
-        top: 25%;
-        right: 23%;
+    .btn1{
+        font-size:1.2rem;
+        border:none;
+        padding:10px 40px;
+        margin: 10px auto; 
     }
 }

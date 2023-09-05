@@ -3,14 +3,13 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 150%;
 }
 
 body {
     background: #D8EACB;
     font-family: 'Montserrat', sans-serif;
     min-height: 100%;
-
     display: flex;
     flex-direction: column;
 }

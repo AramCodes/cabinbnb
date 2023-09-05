@@ -7,6 +7,22 @@ body {
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 5rem;
+}
+
+.image-box {
+    height: 560px;
+    width: 400px;
+    margin-right: 50px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
 .wrapper {
     max-width: 75%;
     margin: auto;
@@ -71,7 +87,6 @@ body {
 
 .faq {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    /*margin: 10px 0:*/
 }
 
 .faq.active {
